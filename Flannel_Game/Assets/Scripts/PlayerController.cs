@@ -1,21 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
+    private static bool created = false;
+
     public float moveSpeed;
     public Material flannel;
-    public GameObject self;
+    public GameObject self; // the player model is a child of the parent to which this script is applied
+                            // set this variable to the child object
     public GameObject altar;
 
     public EnemyController enemy;
 
     private bool inRange = false;
 
+    private void Awake() {
+        if (!created) {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+            Debug.Log("Awake: " + this.gameObject);
+        }
+    }
+
     // Use this for initialization
     void Start() {
-
+        /*
+        Scene currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == "combat") {
+            GetComponent<PlayerCombat>().enabled = true;
+            GetComponent<PlayerController>().enabled = false;
+        } else if (currentScene.name == "main") {
+            GetComponent<PlayerCombat>().enabled = false;
+            GetComponent<PlayerController>().enabled = true;
+        }
+        */
     }
 
     // Update is called once per frame
