@@ -9,7 +9,7 @@ public class PlayerCombat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = 100;
+        health = 10;
         attack = 1;
 	}
 	

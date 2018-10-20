@@ -8,7 +8,7 @@ public class EnemyCombat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = 75;
+        health = 5;
         attack = 1;
 	}
 	
