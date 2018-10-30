@@ -23,6 +23,8 @@ public class CombatManager : MonoBehaviour {
     void Start() {
         attackButton.onClick.AddListener(PlayerAttack);
         turn = 0;
+        this.player = GameObject.Find("Player");
+        this.enemy = GameObject.Find("Enemy");
     }
 
     // Update is called once per frame
