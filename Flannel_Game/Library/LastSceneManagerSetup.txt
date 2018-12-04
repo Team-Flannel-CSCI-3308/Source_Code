@@ -1,4 +1,11 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/main.unity
+=======
+- path: Assets/Scenes/combat.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Scenes/Environment_01.unity
+>>>>>>> origin/env_build_01
   isLoaded: 1
   isActive: 1

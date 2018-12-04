@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2018.2.13f1
 =======
 m_EditorVersion: 2018.2.10f1
 >>>>>>> origin/weaponShop
+=======
+m_EditorVersion: 2018.2.12f1
+>>>>>>> origin/env_build_01
