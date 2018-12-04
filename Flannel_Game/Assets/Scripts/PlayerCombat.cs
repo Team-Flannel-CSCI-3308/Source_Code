@@ -1,21 +1,26 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-[System.Serializable]
-public class PlayerCombat : MonoBehaviour {
+namespace CompleteProject
+{
 
-    public int health, attack;
+    public class PlayerCombat : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-        health = 10;
-        attack = 1;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        public int health, attack, currency;
 
+        public WeaponObject[] weapons;
+        public int currentWeapon = 0;
+
+        // Use this for initialization
+        void Start()
+        {
+            health = 10;
+
+            attack = weapons[currentWeapon].damage;
+
+            currency = 25;
+        }
+    }
 }
