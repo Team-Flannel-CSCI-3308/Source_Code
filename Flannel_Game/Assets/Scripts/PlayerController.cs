@@ -27,16 +27,7 @@ public class PlayerController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        /*
-        Scene currentScene = SceneManager.GetActiveScene();
-        if(currentScene.name == "combat") {
-            GetComponent<PlayerCombat>().enabled = true;
-            GetComponent<PlayerController>().enabled = false;
-        } else if (currentScene.name == "main") {
-            GetComponent<PlayerCombat>().enabled = false;
-            GetComponent<PlayerController>().enabled = true;
-        }
-        */
+        
     }
 
     // Update is called once per frame

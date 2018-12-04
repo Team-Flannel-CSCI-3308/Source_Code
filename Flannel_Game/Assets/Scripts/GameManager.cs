@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour {
     void Start () {
         currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "combat") {
-            player.transform.position = new Vector3(-2f, 0.5f, 0f);
-            enemy.transform.position = new Vector3(2f, 0.5f, 0f);
+            player.transform.position = new Vector3(-2, 0.5f, 0);
+            enemy.transform.position = new Vector3(2, 0.5f, 0);
 
             player.GetComponent<PlayerCombat>().enabled = true;
             player.GetComponent<PlayerController>().enabled = false;
