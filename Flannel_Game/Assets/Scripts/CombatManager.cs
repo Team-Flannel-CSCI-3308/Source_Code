@@ -29,7 +29,7 @@ public class CombatManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (player.GetComponent<PlayerCombat>().health != 0 && enemy.GetComponent<EnemyCombat>().health != 0) {
+        if (player.GetComponent<PlayerCombat>().health > 0 && enemy.GetComponent<EnemyCombat>().health > 0) {
             switch (turn) {
                 case 0:
                     turnText.text = "Player's turn";
@@ -43,7 +43,7 @@ public class CombatManager : MonoBehaviour {
                 default:
                     break;
             }
-        } else if (enemy.GetComponent<EnemyCombat>().health == 0) {
+        } else if (enemy.GetComponent<EnemyCombat>().health <= 0) {
             // we have defeated the enemy
             SceneManager.LoadScene("main");
         }
