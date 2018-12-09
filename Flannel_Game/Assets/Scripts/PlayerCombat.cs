@@ -16,7 +16,7 @@ public class PlayerCombat : MonoBehaviour
         {
             money = 20;
             health = 10;
-            attack = weapons[currentWeapon].damage;
+            // attack = weapons[currentWeapon].damage;
         }
 
         // Update is called once per frame
