@@ -20,12 +20,24 @@ public class RegisterTest {
     }
 
     [Test]
-    public void BringUserToRegistration() {
-                
+    public void UserCannotRegisterEmptyAccount() {
+        var user = new GameObject();
+        user.AddComponent<Registration>();
+        var username = DBManager.username;
+        Assert.IsNull(username);
     }
 
     [Test]
-    public void UserCannotRegisterEmptyAccount() {
-        
+    public void RegistrationCreatesUser() {
+        bool created = false;
+        var oldusername = "";
+        var user = new GameObject();
+        user.AddComponent<Registration>();
+        // var registration = user.GetComponent<Registration>();
+        // registration.nameField.text = "username";
+        // registration.passwordField.text = "password";
+        // registration.Register();
+        var username = DBManager.username;
+        Assert.AreNotSame(oldusername, username);
     }
 }
