@@ -18,4 +18,14 @@ public class RegisterTest {
         // yield to skip a frame
         yield return null;
     }
+
+    [Test]
+    public void BringUserToRegistration() {
+                
+    }
+
+    [Test]
+    public void UserCannotRegisterEmptyAccount() {
+        
+    }
 }
