@@ -7,14 +7,14 @@ public class PlayerCombat : MonoBehaviour
     {
 
         public int health, attack;
-        public int money;
-        public weaponObject[] weapons;
+        public int currency;
+        public WeaponObject[] weapons;
         public int currentWeapon = 0;
 
         // Use this for initialization
         void Start()
         {
-            money = 20;
+            currency = 20;
             health = 10;
             attack = weapons[currentWeapon].damage;
         }
