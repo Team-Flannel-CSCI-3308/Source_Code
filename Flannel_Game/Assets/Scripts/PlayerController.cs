@@ -44,6 +44,10 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Flannel")) {
             inRange = true;
+            altar = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("FlannelObject")) {
+            flannel = other.gameObject.GetComponent<MeshRenderer>().material;
         }
     }
 
@@ -60,12 +64,13 @@ public class PlayerController : MonoBehaviour {
 
     void WearFlannel() {
         if (inRange) {
-            if (Input.GetKeyDown(KeyCode.E)) {
+            Flannel flannelScript = altar.GetComponent<Flannel>();
+            if (Input.GetKeyDown(KeyCode.E) && !flannelScript.isEmpty) {
                 self.GetComponent<MeshRenderer>().material = flannel;
-                Flannel flannelScript = altar.GetComponent<Flannel>();
                 flannelScript.isEmpty = true;
                 DBManager.score++;
                 scoreDisplay.text = "Score: " + DBManager.score;
+                
             }
         }
     }
