@@ -6,8 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 596e131ddb1bc2d4990a5b5fc82bde99
+  - enabled: 1
+    path: Assets/Scenes/registermenu.unity
+    guid: 02723cade866e01418afaa5d71ba5229
+  - enabled: 1
+    path: Assets/Scenes/loginmenu.unity
+    guid: c3ca6d289455f0144aeccfde513169de
+  - enabled: 1
+    path: Assets/Scenes/Environment_01.unity
+    guid: 27384e8768d696c40a18a3ebca7aca40
+  - enabled: 0
     path: Assets/Scenes/main.unity
     guid: 70c7d739404bbee4ab93f51c9274f03a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/combat.unity
     guid: c30ce1d9e0e9a844cbd4a962c57abc51
+  m_configObjects: {}

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
-    private static bool created = false;
+    // private static bool created = false;
 
     public float moveSpeed;
     public Material flannel;
@@ -15,14 +16,18 @@ public class PlayerController : MonoBehaviour {
 
     public EnemyController enemy;
 
+    public Text scoreDisplay;
+
     private bool inRange = false;
 
     private void Awake() {
+        /*
         if (!created) {
             DontDestroyOnLoad(this.gameObject);
             created = true;
             Debug.Log("Awake: " + this.gameObject);
         }
+        */
     }
 
     // Use this for initialization
@@ -39,6 +44,10 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Flannel")) {
             inRange = true;
+            altar = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("FlannelObject")) {
+            flannel = other.gameObject.GetComponent<MeshRenderer>().material;
         }
     }
 
@@ -54,11 +63,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void WearFlannel() {
-        if (inRange && !enemy.isAlive) {
-            if (Input.GetKey(KeyCode.E)) {
+        if (inRange) {
+            Flannel flannelScript = altar.GetComponent<Flannel>();
+            if (Input.GetKeyDown(KeyCode.E) && !flannelScript.isEmpty) {
                 self.GetComponent<MeshRenderer>().material = flannel;
-                Flannel flannelScript = altar.GetComponent<Flannel>();
                 flannelScript.isEmpty = true;
+                DBManager.score++;
+                scoreDisplay.text = "Score: " + DBManager.score;
+                
             }
         }
     }

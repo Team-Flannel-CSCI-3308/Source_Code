@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flannel
+  - FlannelObject
   layers:
   - Default
   - TransparentFX
